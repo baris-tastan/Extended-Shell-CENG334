@@ -1,7 +1,7 @@
 # Extended Shell (eshell)
 
 ## Overview
-This project is an extended Unix shell implementation, **eshell**, developed as part of the **CENG 334 - Introduction to Operating Systems** course at **Middle East Technical University**. The shell supports various execution modes, including:
+This project is an extended Unix shell implementation, **eshell**. eThe shell supports various execution modes, including:
 - **Sequential Execution** (`;` separator)
 - **Parallel Execution** (`,` separator)
 - **Pipeline Execution** (`|` separator)
@@ -15,8 +15,7 @@ It mimics standard Unix shell behavior while extending its functionality to incl
 - **Sequential Execution**: Allows sequential execution of commands (`cmd1 ; cmd2`).
 - **Parallel Execution**: Runs commands concurrently using the `,` separator (`cmd1 , cmd2`).
 - **Subshell Execution**: Groups commands within subshells for isolated execution.
-- **Custom Prompt**: Displays a simple `/>` prompt for user input.
-- **Graceful Termination**: Supports exiting with the `quit` command.
+
 
 ## Installation & Usage
 ### Prerequisites
@@ -50,34 +49,4 @@ Once inside `eshell`, you can execute commands just like in a typical shell envi
 - **Synchronization:** Uses `wait()` to ensure proper execution flow in sequential and subshell operations.
 - **Parallel Execution Handling:** Runs commands concurrently and reaps processes appropriately to prevent zombie processes.
 - **Subshell Execution:** Forks a child shell process to execute commands in isolation.
-
-## File Structure
-```
-├── src/
-│   ├── main.c          # Entry point of eshell
-│   ├── parser.c        # Parses user input into command structures
-│   ├── executor.c      # Handles command execution
-│   ├── pipeline.c      # Implements pipeline functionality
-│   ├── subshell.c      # Manages subshell execution
-│   └── utils.c         # Helper functions
-├── include/
-│   ├── parser.h        # Header for parsing logic
-│   ├── executor.h      # Header for execution logic
-│   ├── pipeline.h      # Header for pipeline handling
-│   ├── subshell.h      # Header for subshell handling
-│   └── utils.h         # Header for utility functions
-├── Makefile            # Build instructions
-├── README.md           # Project documentation
-```
-
-## Future Improvements
-- Add support for background process execution (`&` operator).
-- Implement I/O redirection (`>`, `<`, `>>`).
-- Enhance error handling and logging.
-
-## License
-This project is licensed under the **MIT License**.
-
-## Author
-Developed as part of **CENG 334 - Introduction to Operating Systems** coursework at **Middle East Technical University (METU)**.
 
